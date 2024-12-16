@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoplay Music Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My Website</h1>
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="your-music-file.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button onclick="toggleMusic()">Pause Music</button>
+
+  <script>
+    const music = document.getElementById('backgroundMusic');
+    const button = document.querySelector('button');
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        button.textContent = 'Pause Music';
+      } else {
+        music.pause();
+        button.textContent = 'Play Music';
+      }
+    }
+  </script>
+</body>
+</html>
